@@ -19,7 +19,6 @@ export class AuthService {
       const jwtPayload: JwtPayload = {
         name: user.first_name + ' ' + user.last_name,
         id: user.email,
-        publishers: user.publisher_id,
         role: user.role
       }
       const currentDateTime = new Date().toLocaleString().slice(0,19).replace('T', ' ')

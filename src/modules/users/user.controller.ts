@@ -3,12 +3,14 @@ import { UserService } from './user.service';
 import { User } from './user.entity';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiUseTags } from '@nestjs/swagger';
+import { RolesGuard } from '../../common/guards/roles.guard';
+import { Roles } from '../../common/decorators/roles';
 
 @ApiUseTags('Users')
-@UseGuards(AuthGuard('jwt'))
+@UseGuards(AuthGuard('jwt'), RolesGuard)
 @Controller('users')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) { }
 
   @Get()
   findAll(): Promise<User[]> {
@@ -20,6 +22,7 @@ export class UserController {
     return this.userService.saveUser(user)
   }
 
+  @Roles('admin')
   @Get('/:id')
   getUserById(@Param('id') id: number) {
     return this.userService.getUserById(id)
@@ -27,11 +30,11 @@ export class UserController {
 
   @Put('/:id')
   updateUser(@Param('id') id: number, @Body() user: User) {
-    return this.userService.updateUser(user,id)
+    return this.userService.updateUser(user, id)
   }
 
   @Delete('/:id')
-  deleteUser(@Param('id') id: number){
+  deleteUser(@Param('id') id: number) {
     return this.userService.deleteUser(id)
   }
 }

@@ -20,15 +20,12 @@ export class User {
     @Column()
     password: string
 
-    @Column({type: 'datetime'})
+    @Column({ type: 'datetime', nullable: true })
     last_login: string
 
-    @Column({nullable: true})
+    @Column({ nullable: true })
     token: string
 
-    @Column()
-    publisher_id: number
-    
     @CreateDateColumn()
     create_date: Date
 }
