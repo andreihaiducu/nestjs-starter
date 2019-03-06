@@ -19,7 +19,6 @@ async function bootstrap() {
     .setDescription('Available interactions with the backend services')
     .setBasePath(prefix)
     .setVersion('1.0')
-    .addTag('doraly marketplace')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup(`${prefix}/swagger`, app, document);
