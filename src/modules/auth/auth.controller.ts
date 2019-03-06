@@ -1,5 +1,4 @@
-import { Controller, Get, UseGuards, Body, Post, Delete } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+import { Controller, Body, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { ILogin } from './interfaces/Login.interface';
 import { ApiUseTags } from '@nestjs/swagger';
