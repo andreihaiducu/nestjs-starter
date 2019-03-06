@@ -33,6 +33,6 @@ export class ActivityLogController {
 	})
 	@Post()
 	saveLog(@Body() log: ActivityLog) {
-		this.activityLogService.saveLog(log)
+		return this.activityLogService.saveLog(log)
 	}
 }

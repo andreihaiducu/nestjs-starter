@@ -11,7 +11,7 @@ export class ActivityLogService {
     }
 
     getAllLogs() {
-        return this.acivityLogRepository.find({ relations: ['offer'] })
+        return this.acivityLogRepository.find()
     }
 
     saveLog(log: ActivityLog) {
