@@ -13,8 +13,8 @@ const envVarsSchema = joi.object({
     JWT_SECRET: joi.string().required(),
 }).unknown().required()
 
-const {error , value: envVars } = joi.validate(process.env, envVarsSchema)
-if(error) {
+const { error, value: envVars } = joi.validate(process.env, envVarsSchema)
+if (error) {
     throw new Error(`Config validation error ${error.message}`)
 }
 
@@ -28,4 +28,4 @@ export default {
     dbUserName: envVars.DB_USERNAME,
     dbPassword: envVars.DB_PASSWORD,
     jwtSecret: envVars.JWT_SECRET,
-  };
+};

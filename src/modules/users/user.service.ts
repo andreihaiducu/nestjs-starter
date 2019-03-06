@@ -22,7 +22,7 @@ export class UserService {
 
     public async updateUser(user: User, id?: number): Promise<User | NotFoundException> {
         const dbUser = await this.userRepository.findOne({ id: id })
-        if(!dbUser){
+        if (!dbUser) {
             return new NotFoundException('User Not Found')
         }
         return this.userRepository.save(user)

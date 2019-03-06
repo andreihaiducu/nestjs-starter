@@ -9,4 +9,4 @@ import { ActivityLogService } from "./activity-log.service";
     controllers: [ActivityLogController],
     providers: [ActivityLogService]
 })
-export class ActivityLogModule {}
+export class ActivityLogModule { }

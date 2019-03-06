@@ -21,11 +21,7 @@ export class AuthService {
         id: user.email,
         role: user.role
       }
-      const currentDateTime = new Date().toLocaleString().slice(0,19).replace('T', ' ')
       const accessToken = this.jwtService.sign(jwtPayload, { expiresIn: 864000 });
-      user.token = accessToken
-      user.last_login = currentDateTime
-      await this.userService.updateUser(user)
       if (accessToken != '') {
         return { token: accessToken }
       }

@@ -10,8 +10,8 @@ export class ActivityLogService {
         private acivityLogRepository: Repository<ActivityLog>) {
     }
 
-    getAllLogs(){
-        return this.acivityLogRepository.find({relations: ['offer']})
+    getAllLogs() {
+        return this.acivityLogRepository.find({ relations: ['offer'] })
     }
 
     saveLog(log: ActivityLog) {

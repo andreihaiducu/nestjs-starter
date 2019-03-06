@@ -11,10 +11,10 @@ export class ActivityLog {
     @UpdateDateColumn()
     updatedAt?: Date;
 
-    @Column({type:'text'})
+    @Column({ type: 'text' })
     oldValue: string
 
-    @Column({type:'text'})
+    @Column({ type: 'text' })
     newValue: string
 
     @Column()

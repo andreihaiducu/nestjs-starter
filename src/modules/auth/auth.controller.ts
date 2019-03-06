@@ -14,15 +14,4 @@ export class AuthController {
     return await this.authService.loginUser(payload);
   }
 
-  @Get('data')
-  @UseGuards(AuthGuard('jwt'))
-  findAll() {
-    // This route is restricted by AuthGuard
-    // JWT strategy
-  }
-
-  @Delete("/logout")
-  logout() {
-    return { success: true }
-  }
 }

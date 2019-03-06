@@ -8,9 +8,9 @@ import { ApiResponse, ApiUseTags } from "@nestjs/swagger";
 @UseGuards(AuthGuard('jwt'))
 @Controller('activity_log')
 export class ActivityLogController {
-    constructor(private readonly activityLogService: ActivityLogService) {}
-   
-    @ApiResponse({
+	constructor(private readonly activityLogService: ActivityLogService) { }
+
+	@ApiResponse({
 		status: 201,
 		description: "Returns all logs from database"
 	})
@@ -22,17 +22,17 @@ export class ActivityLogController {
 		status: 401,
 		description: "Unauthorized"
 	})
-    @Get()
-    getAll(){
-        return this.activityLogService.getAllLogs()
-    }
+	@Get()
+	getAll() {
+		return this.activityLogService.getAllLogs()
+	}
 
-    @ApiResponse({
+	@ApiResponse({
 		status: 201,
 		description: "Creates new log in database"
 	})
-    @Post()
-    saveLog(@Body() log: ActivityLog) {
-        this.activityLogService.saveLog(log)
-    }
+	@Post()
+	saveLog(@Body() log: ActivityLog) {
+		this.activityLogService.saveLog(log)
+	}
 }
