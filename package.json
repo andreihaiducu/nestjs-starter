@@ -29,7 +29,7 @@
     "passport-jwt": "^4.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.4.0",
-    "typeorm": "^0.2.14"
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.120",
